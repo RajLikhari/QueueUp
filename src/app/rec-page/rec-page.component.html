@@ -1,0 +1,11 @@
+<div class="main-container">
+    <div class="search-container">
+     
+    
+    </div>
+    <div class="videogame-container">
+      <div *ngFor="let item of RecommendationArray">
+        <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
+      </div>
+    </div>
+  </div>

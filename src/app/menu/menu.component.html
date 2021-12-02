@@ -1,0 +1,49 @@
+<div class="menu-container">
+    <div class="left-menu">
+      <img src="../../assets/Logo-White.png" id="logo-menu" routerLink="/home">
+      <div class="full">
+        <button mat-button id="menu-button" routerLink="/home">Home</button>
+        <button  mat-button id="menu-button" routerLink="/search">Search</button>
+        <button  mat-button id="menu-button" routerLink="/most-watched">Popular</button>
+        <button  mat-button id="menu-button" routerLink="/year-born">Retro</button>
+        <button  mat-button id="menu-button" routerLink="/key-search">Favorites</button>
+      </div>
+      <div class="small">
+         <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="icon">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/home">
+            <mat-icon class="icon">home</mat-icon>
+            <span class="txt">Home</span>
+          </button>
+          <button mat-menu-item routerLink="/search">
+            <mat-icon class="icon">search</mat-icon>
+            <span class="txt">Search</span>
+          </button>
+          <button mat-menu-item routerLink="/most-watched">
+            <mat-icon class="icon">favorite</mat-icon>
+            <span class="txt">Popular</span>
+          </button>
+          <button mat-menu-item routerLink="/year-born">
+            <mat-icon class="icon">timelapse</mat-icon>
+            <span class="txt">Retro</span>
+          </button>
+          <button mat-menu-item routerLink="/key-search">
+            <mat-icon class="icon">star</mat-icon>
+            <span class="txt">Favorites</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="right-menu">
+        <button mat-icon-button id="access-button" (click)="openAccessOne()">
+            <mat-icon>accessible</mat-icon>
+          </button>
+          <button mat-icon-button id="access-button" (click)="openAccessTwo()">
+            <mat-icon>accessibility</mat-icon>
+          </button>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

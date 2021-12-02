@@ -1,0 +1,32 @@
+<div class="main-container">
+    <div class="search-container">
+        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
+            <mat-form-field appearance="fill">
+                <mat-label>Keyword</mat-label>
+                <input matInput formControlName="key">
+            </mat-form-field>
+            <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
+        </form>
+        
+        <form [formGroup]='formGroup2' class='form-container' (ngSubmit)="processForm2()">
+            <mat-form-field appearance="fill">
+                <mat-label>Game 1</mat-label>
+                <mat-select formControlName="game1">
+                    <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Game 2</mat-label>
+                 <mat-select formControlName="game2">
+                    <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
+        </form>
+      </div>
+      <div class="videogame-container">
+        <div *ngFor="let item of GameArray">
+            <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
+          </div>
+      </div>
+</div>

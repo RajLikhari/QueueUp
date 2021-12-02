@@ -1,0 +1,55 @@
+<div class="main-flex">
+    <div class="search-flex">
+        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()" >
+            <button mat-button class="clear-button" type="reset" id="reset-button">Clear</button>
+            <mat-form-field appearance="fill" id="genre-select">
+                <mat-label for='genre' id="genre-label">Genre</mat-label>
+                <mat-select placeholder="Genre" formControlName="genre">
+                    <mat-option>None</mat-option>
+                    <mat-option value="Shooter">Shooter</mat-option>
+                    <mat-option value="Racing">Racing</mat-option>
+                    <mat-option value="Strategy">Stategy</mat-option>
+                    <mat-option value="Fighting">Fighting</mat-option>
+                    <mat-option value="Adventure">Adventure</mat-option>
+                    <mat-option value="Indie">Indie</mat-option> <!--New Addtion Sprint 2-->
+                    <mat-option value="Point-and-click">Point-and-click</mat-option> <!--New Addtion Sprint 2-->
+                    <mat-option value="Simulator">Simulator</mat-option> <!--New Addtion Sprint 2-->
+                    <mat-option value="Tactical">Tactical</mat-option> <!--New Addtion Sprint 2-->
+                    <mat-option value="MOBA">MOBA</mat-option> <!--New Addtion Sprint 2-->
+                    <mat-option value="Sport">Sport</mat-option>  <!--New Addtion Sprint 2-->
+                    <mat-option value="Puzzle">Puzzle</mat-option>  <!--New Addtion Sprint 2-->
+                    <mat-option value="Family">Family</mat-option>  <!--New Addtion Sprint 2-->
+                    <mat-option value="Role-playing-games-rpg">Role-Playing</mat-option>  <!--New Addtion Sprint 2-->
+                    <mat-option value="Platformer">Platformer</mat-option>  <!--New Addtion Sprint 2-->
+                </mat-select>
+            </mat-form-field>
+            <!--Form group for platform-->
+            <mat-form-field appearance="fill" id="platform-select">
+                <mat-label for='platform' id="platform-label">Platform</mat-label>
+                <mat-select placeholder="platform" formControlName="platform">
+                   <mat-option value="PC~pc">PC (Windows)</mat-option>
+                   <mat-option value="PlayStation 5~playstation5">PlayStation 5</mat-option>
+                   <mat-option value="Xbox Series S/X~xbox-series-x">XBox Series X/S</mat-option>
+                   <mat-option value="PlayStation 4~playstation4">PlayStation 4</mat-option>
+                   <mat-option value="Xbox One~xbox-one">XBox One</mat-option>
+                   <mat-option value="PlayStation 3~playstation3">PlayStation 3</mat-option>
+                   <mat-option value="XBox 360~xbox360">XBox 360</mat-option>
+                   <mat-option value="Linux~linux">Linux</mat-option>
+                   <mat-option value="iOS~ios">iOS</mat-option>
+                   <mat-option value="Android~android">Android</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!--Form group for multiplayer-->
+            <mat-checkbox  id="multi-label" formControlName="multi">Multiplayer</mat-checkbox>
+            <button mat-button class="submit-button" type="submit" id="submit-button">Search</button>
+        </form>
+    </div>
+    <div class="card-flex">
+        <div *ngFor="let game of RAWGData">
+            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
+        </div>
+        <div *ngFor="let game of IGDBData">
+            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
+        </div>
+    </div>
+</div>

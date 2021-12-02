@@ -1,0 +1,198 @@
+#particles-js{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.container{
+    display: grid;
+    height: auto;
+    position: relative;
+    width: 100%;
+    background-color: #eaeef0;
+    //z-index: -1;
+    grid-template-areas: "a"
+                        " b";
+    overflow: hidden;
+
+
+    .header-container{
+        grid-area: a;
+        width: 100%;
+        height: auto;
+        position: relative;
+        animation: colorshift 1.5s;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+
+        .text-container{
+            margin-top: 50px;
+            margin-bottom: 20px;
+            width: 900px;
+            height: 80vh;
+            display: flex;
+            font-family: 'Open Sans Condensed', sans-serif;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #eaeef0;
+            border-radius: 50px;
+            border: 10px solid #eaeef0;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.2), -10px -10px 20px white, inset 10px 10px 20px rgba(0,0,0,0.2), inset -8px -8px 20px white;
+            animation: startUp 2s;
+
+
+            p:first-of-type{
+                font-size: 80px;
+                margin-bottom: 80px;
+            }
+
+            p{
+                width: 80%;
+                font-size: 50px;
+                line-height: 55px;
+                margin-bottom: 50px;
+            }
+
+            button{
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 40px;
+                height: 8%;
+                background-color: #28282B;
+                color: white;
+                border-radius: 20px;
+                
+            }
+
+
+        }
+    
+        .logo-container{
+            width: 900px;
+            height: 80vh;
+            display: flex;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: white;
+            animation: wakeUp 3s;               
+        }
+
+        @keyframes startUp {
+            0%{
+                transform: translateX(-1000px);
+            }
+        }
+
+        @keyframes wakeUp{
+            0%{
+                opacity: 0;
+            }
+        }
+
+
+        
+
+       
+
+    }
+
+
+    .info-container{
+        grid-area: b;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        
+
+        .info-card{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-color: #28282B;
+            height: 700px;
+            width: 700px;
+            margin: 100px;
+            border-radius: 50px;
+            box-shadow: 10px 10px 15px rgba(0,0,0,0.4);
+            transition: 0.5s;
+            z-index: 10;
+
+            .card-face{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50px;
+                transition: 0.5s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 20;
+
+                mat-icon{
+                    color: white;
+                    transform: scale(8);
+                    transition: 0.5s;
+
+                }
+            }
+            
+            .card-content{
+                margin-top: 35%;
+                margin-left: 16%;
+                height: 100%;
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                text-align: center;
+                z-index: 15;
+                font-family: 'Open Sans Condensed', sans-serif;
+                color: white;
+                font-size: 40px;
+                line-height: 50px;
+
+            }
+
+            .card-content p:first-of-type{
+                font-size: 60px;
+                margin-bottom: 30px;
+            }
+            
+        
+
+        }
+
+    }
+
+    .info-container .info-card:hover .card-face{
+        left: 40%;
+        top: 5%;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        transition-delay: 0.5s;
+    }
+
+    .info-container .info-card:hover .card-face mat-icon{
+       margin-top: 5px;
+       transform: scale(4);
+    }
+
+    
+    
+
+}
+
