@@ -16,7 +16,7 @@ export class RecPageComponent implements OnInit {
     const bodyToSend = {}
     try{
       let birthdayCall = new Promise((resolve, reject) => {
-        this.http.post("Twitch", bodyToSend)
+        this.http.post("https://queueup-back.herokuapp.com/Twitch", bodyToSend)
           .toPromise()
           .then(
             res => {

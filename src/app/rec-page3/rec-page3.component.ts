@@ -39,7 +39,7 @@ export class RecPage3Component implements OnInit {
       }
       console.log(this.formGroup.value.key)
       let igdbCall = new Promise((resolve, reject) => {
-        this.http.post("IGDBKeyRec", bodyKey)
+        this.http.post("https://queueup-back.herokuapp.com/IGDBKeyRec", bodyKey)
          .toPromise()
          .then(
            res => {
@@ -64,7 +64,7 @@ export class RecPage3Component implements OnInit {
       }
       console.log(this.formGroup.value.key)
       let igdbCall = new Promise((resolve, reject) => {
-        this.http.post("IGDBKey", bodyKey)
+        this.http.post("https://queueup-back.herokuapp.com/IGDBKey", bodyKey)
          .toPromise()
          .then(
            res => {

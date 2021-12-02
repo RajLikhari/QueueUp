@@ -68,7 +68,7 @@ export class SearchPageComponent implements OnInit {
       //API Calls (can be refined split on value)
       if(!rawgOff){
         let rawgCall = new Promise((resolve, reject) => {
-          this.http.post(API_URL + "RAWGCall", bodyRAWG)
+          this.http.post("https://queueup-back.herokuapp.com/RAWGCall", bodyRAWG)
            .toPromise()
            .then(
              res => {
@@ -85,7 +85,7 @@ export class SearchPageComponent implements OnInit {
       //API Calls (can be refined split on value)
       if(!igdbOff){
         let IGDBCall = new Promise((resolve, reject) => {
-          this.http.post(API_URL + "IGDBCall", bodyIGDB)
+          this.http.post("https://queueup-back.herokuapp.com/IGDBCall", bodyIGDB)
           .toPromise()
           .then(
             res => {

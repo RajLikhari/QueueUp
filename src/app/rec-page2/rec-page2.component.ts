@@ -28,7 +28,7 @@ export class RecPage2Component implements OnInit {
       }
       try{
         let birthdayCall = new Promise((resolve, reject) => {
-          this.http.post("Birthyear", bodyToSend)
+          this.http.post("https://queueup-back.herokuapp.com/Birthyear", bodyToSend)
             .toPromise()
             .then(
               res => {

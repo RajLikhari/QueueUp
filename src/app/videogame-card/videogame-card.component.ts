@@ -23,12 +23,25 @@ export class VideogameCardComponent implements OnInit {
       keyword: this.gameName
     }
 
+    let igdbCall = new Promise((resolve, reject) => {
+      this.http.post("https://queueup-back.herokuapp.com/twitterCall", body)
+       .toPromise()
+       .then(
+         res => {
+          console.log(res)
+         },
+         msg=>{
+           reject(msg)
+         }
+       )
+     })
+
     // let twitterPromise = new Promise((resolve, reject) => {
-    //   this.http.post("twitterCall", body)
+    //   this.http.post("https://queueup-back.herokuapp.com/twitterCall", body)
     //     .toPromise()
     //     .then(
-    //       res=>{            
-    //         var resultArray = Object.entries(res)
+    //       resp =>{            
+    //         var resultArray = Object.entries(resp)
     //         var grabText = resultArray[0][1]
     //         try{
     //           for(let i = 0; i < 5; i++){
