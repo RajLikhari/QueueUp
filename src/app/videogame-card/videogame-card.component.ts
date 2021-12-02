@@ -29,8 +29,19 @@ export class VideogameCardComponent implements OnInit {
        .then(
          res => {
           var resultArray = Object(res)
-          console.log(resultArray)
-         },
+          var grabText = resultArray["data"]
+          try{
+            for(let i = 0; i < 5; i++){
+              this.twitterArray.push(grabText[i]["text"])
+            }
+            this.valueToCheck = true
+            this.buttonVal = false
+          } catch(error) {
+            this.showText = true
+            this.buttonVal = false
+          }
+          resolve(res)
+        },
          msg=>{
            reject(msg)
          }
