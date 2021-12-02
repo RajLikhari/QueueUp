@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment.prod';
+const API_URL = environment.apiUrl;
 
 
 @Component({
@@ -26,6 +28,7 @@ export class SearchPageComponent implements OnInit {
 
   RAWGData: any = []
   IGDBData: any = []
+
   processForm(){
     this.RAWGData = []
     this.IGDBData = []
@@ -65,7 +68,7 @@ export class SearchPageComponent implements OnInit {
       //API Calls (can be refined split on value)
       if(!rawgOff){
         let rawgCall = new Promise((resolve, reject) => {
-          this.http.post("https://queueup-back.herokuapp.com/RAWGCall", bodyRAWG)
+          this.http.post(API_URL + "RAWGCall", bodyRAWG)
            .toPromise()
            .then(
              res => {
@@ -82,7 +85,7 @@ export class SearchPageComponent implements OnInit {
       //API Calls (can be refined split on value)
       if(!igdbOff){
         let IGDBCall = new Promise((resolve, reject) => {
-          this.http.post("https://queueup-back.herokuapp.com/IGDBCall", bodyIGDB)
+          this.http.post(API_URL + "IGDBCall", bodyIGDB)
           .toPromise()
           .then(
             res => {
