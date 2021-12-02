@@ -37,7 +37,12 @@ export class SearchPageComponent implements OnInit {
     if(this.formGroup.value.genre == null){
       this._snackBar.open("Genre must be given!", "Close")
     } else {
-      var splitted = this.formGroup.value.genre.split("~",1)
+      var splitted = []
+      try{
+        splitted = this.formGroup.value.platform.split("~",2)
+      } catch(error){
+        splitted = [null, null]
+      }
 
       //Creating body responses
       var bodyRAWG = {
@@ -48,7 +53,7 @@ export class SearchPageComponent implements OnInit {
       var bodyIGDB = {
         genre: this.formGroup.value.genre,
         multiplayer: this.formGroup.value.multi,
-        platform: splitted[1]
+        platform: splitted[0]
       }
       this.formGroup.reset
 
