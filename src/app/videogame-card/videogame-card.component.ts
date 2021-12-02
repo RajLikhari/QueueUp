@@ -28,7 +28,8 @@ export class VideogameCardComponent implements OnInit {
        .toPromise()
        .then(
          res => {
-          console.log(res)
+          var resultArray = Object(res)
+          console.log(resultArray)
          },
          msg=>{
            reject(msg)
