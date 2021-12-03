@@ -26,7 +26,7 @@
 
     .info-container{
         display: flex;
-        height: 250px;
+        height: auto;
         width: 100%;
         flex-direction: column;
         text-align: left;
@@ -56,7 +56,7 @@
 
     .search-flex{
         display: grid;
-        height: 100px;
+        height: auto;
         width: 100%;
         margin-top: 30px;
         justify-content: center;
@@ -129,7 +129,7 @@
 @media only screen and (max-width: 850px) {
     .main-flex{
         .info-container{
-            height: 400px;
+            height: auto;
             h1{
               font-size: 40px;
               line-height: 40px;  
@@ -176,7 +176,8 @@
                 display: flex;
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 18px; 
-                margin-left: 29vw;
+                margin-left: 22vw;
+                margin-top: 20px;
     
             }
     
@@ -188,7 +189,7 @@
                 display: flex;
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 18px;
-                margin-left: 29vw;
+                margin-left: 22vw;
             }
     
             #platform-label{

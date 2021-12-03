@@ -14,7 +14,7 @@
             <button mat-button class="clear-button" type="reset" id="reset-button" [style.background-color]='clearButton'>Clear</button>
             <mat-form-field appearance="fill" id="genre-select">
                 <mat-label for='genre' id="genre-label" [style.color]='fontColor'>Genre</mat-label>
-                <mat-select placeholder="Genre" formControlName="genre" >
+                <mat-select placeholder="Genre" formControlName="genre" [style.color]='fontColor'>
                     <mat-option>None</mat-option>
                     <mat-option value="Shooter">Shooter</mat-option>
                     <mat-option value="Racing">Racing</mat-option>

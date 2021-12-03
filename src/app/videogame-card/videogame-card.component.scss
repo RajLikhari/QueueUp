@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     position: relative;
 
-    height: 1000px;
+    height: 1200px;
     width: 400px;
     background-color: #28282B;
     border-radius: 20px;
@@ -19,7 +19,7 @@
     .image-flex{
         display: flex;
         flex-direction: row;
-        width: 80%;
+        width: 85%;
         height: 30%;
         border-radius: 10px;
         justify-content: center;
@@ -57,7 +57,8 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 90%;
-        height: 50%;
+        min-height: 50%;
+        height: auto;
         border: 1px solid white;
         border-radius: 10px;
         justify-content: center;
@@ -65,6 +66,7 @@
         color: white;
         font-family: 'Open Sans Condensed', sans-serif;
         font-size: 20px;
+        margin-bottom: 20px;
 
     }
 
@@ -94,3 +96,9 @@
 
 }
 
+@media only screen and (max-width: 450px) {
+    .card-flex{
+        width: 90vw;
+    }
+    
+}

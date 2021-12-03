@@ -30,7 +30,7 @@
 .info-container{
   position: relative;
   display: flex;
-  height: 250px;
+  height: auto;
   width: 100%;
   flex-direction: column;
   text-align: left;
@@ -144,7 +144,7 @@
 @media only screen and (max-width: 780px) {
   .main-container{
     .info-container{
-      height: 420px;
+      height: auto;
       h1{
         font-size: 40px;
         line-height: 40px;  
