@@ -41,29 +41,10 @@
             font-size: 50px;
             line-height: 50px;
             position: relative;
+            margin-top: 10px;
 
         }
         
-        h1:before{
-            position: absolute;
-            content: '';
-            height: 5px;
-            width: 520px;
-            top: 100%;
-            background-color: aliceblue;
-            animation: startUp 2s;
-        }
-
-        @keyframes startUp {
-            0%{
-                width: 0px;
-                opacity: 0;
-            }
-            100%{
-                width: 520px;
-            }
-        }
-
         p{
             font-family: 'Open Sans Condensed', sans-serif;
             padding: 20px;
@@ -148,14 +129,14 @@
 @media only screen and (max-width: 850px) {
     .main-flex{
         .info-container{
-            height: 280px;
+            height: 400px;
             h1{
               font-size: 40px;
               line-height: 40px;  
             } 
             h1:before{
                 height: 5px;
-                width: 410px;
+                width: 300px;
             }
         
             @keyframes startUp {
@@ -164,7 +145,7 @@
                     opacity: 0;
                 }
                 100%{
-                    width: 410px;
+                    width: 300px;
                 }
             }
       
@@ -188,14 +169,14 @@
                 background-color: #D22B2B;
                 color: white;
                 font-size: 25px;
-                margin-left: 45vw;
+                margin-left: 40vw;
             }
     
             #genre-select{
                 display: flex;
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 18px; 
-                margin-left: 34vw;
+                margin-left: 29vw;
     
             }
     
@@ -207,7 +188,7 @@
                 display: flex;
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 18px;
-                margin-left: 34vw;
+                margin-left: 29vw;
             }
     
             #platform-label{
@@ -218,7 +199,7 @@
                 display: flex;
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 22px;
-                margin-left: 40vw;
+                margin-left: 35vw;
             }
     
             #submit-button{
@@ -227,7 +208,7 @@
                 background-color: #228B22;
                 color: white;
                 font-size: 25px;
-                margin-left: 45vw;
+                margin-left: 40vw;
                 margin-top: 20px;
             }
         }

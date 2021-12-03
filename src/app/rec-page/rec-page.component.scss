@@ -45,29 +45,10 @@
         font-size: 50px;
         line-height: 50px;
         position: relative;
+        margin-top: 10px;
 
     }
     
-    h1:before{
-        position: absolute;
-        content: '';
-        height: 5px;
-        width: 520px;
-        top: 100%;
-        background-color: aliceblue;
-        animation: startUp 2s;
-    }
-
-    @keyframes startUp {
-        0%{
-            width: 0px;
-            opacity: 0;
-        }
-        100%{
-            width: 520px;
-        }
-    }
-
     p{
         font-family: 'Open Sans Condensed', sans-serif;
         padding: 20px;
@@ -93,14 +74,14 @@
 @media only screen and (max-width: 780px) {
     .main-container{
         .info-container{
-            height: 280px;
+            height: 380px;
             h1{
               font-size: 40px;
               line-height: 40px;  
             } 
             h1:before{
                 height: 5px;
-                width: 425px;
+                width: 310px;
             }
         
             @keyframes startUp {
@@ -109,7 +90,7 @@
                     opacity: 0;
                 }
                 100%{
-                    width: 425px;
+                    width: 310px;
                 }
             }
       
