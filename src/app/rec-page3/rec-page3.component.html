@@ -2,35 +2,44 @@
     <div class="mode-container">
         <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
         <mat-slide-toggle (change)="onScale($event)" [checked]='scaleCheck'><mat-icon>accessibility</mat-icon></mat-slide-toggle>
-    </div>
+      </div>
+      <div class="info-container">
+        <h1>Welcome to the Favorites Feature!</h1>
+        <p>Find your new favorite game based on a keyword! Enter in a keyword in the first submission box and then choose two games from the resulting forms!
+            After that enjoy some of our best recommendations on two of your favorite games!
+        </p>
+      </div>
     <div class="search-container">
-        <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
-            <mat-form-field appearance="fill">
-                <mat-label>Keyword</mat-label>
-                <input matInput formControlName="key">
-            </mat-form-field>
-            <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
-        </form>
-        
-        <form [formGroup]='formGroup2' class='form-container' (ngSubmit)="processForm2()">
-            <mat-form-field appearance="fill">
-                <mat-label>Game 1</mat-label>
-                <mat-select formControlName="game1">
-                    <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Game 2</mat-label>
-                 <mat-select formControlName="game2">
-                    <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
-        </form>
+        <div class="left-search" [style.opacity]='opacityOne' [style.z-index]='zIndex'>
+            <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
+                <mat-form-field appearance="fill">
+                    <mat-label class="keyWord" [style.color]='fontColor'>Keyword</mat-label>
+                    <input matInput formControlName="key">
+                </mat-form-field>
+                <button mat-button class="submit-button" type="submit" id="submit-button" [style.background-color]='buttonColor'>Submit</button>
+            </form>
+        </div>
+        <div class="right-search" [style.opacity]='opacityTwo' [style.z-index]='zIndexOne'>
+            <form [formGroup]='formGroup2' class='form-container' (ngSubmit)="processForm2()">
+                <mat-form-field appearance="fill">
+                    <mat-label class="keyWord" [style.color]='fontColor'>Game 1</mat-label>
+                    <mat-select formControlName="game1">
+                        <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label  class="keyWord" [style.color]='fontColor'>Game 2</mat-label>
+                     <mat-select formControlName="game2">
+                        <mat-option *ngFor="let item of KeyArray" value='{{item}}'>{{item}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button mat-button class="submit-button" type="submit" id="submit-button" [style.background-color]='buttonColor'>Submit</button>
+            </form>
+        </div>
       </div>
       <div class="videogame-container">
         <div *ngFor="let item of GameArray">
-            <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
+            <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]" [filter]='filter'></app-videogame-card>
           </div>
       </div>
 </div>

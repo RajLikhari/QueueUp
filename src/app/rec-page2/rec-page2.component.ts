@@ -18,6 +18,8 @@ export class RecPage2Component implements OnInit {
     
   })
 
+
+
   RecommendationArray: any = []
   processForm(){
     if(this.formGroup.value.year == null){
