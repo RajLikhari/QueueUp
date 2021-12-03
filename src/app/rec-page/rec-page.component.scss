@@ -83,9 +83,41 @@
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-
+    min-height: 800px;
     justify-content: space-around;
     align-items: center;
   }
 
 } 
+
+@media only screen and (max-width: 780px) {
+    .main-container{
+        .info-container{
+            height: 280px;
+            h1{
+              font-size: 40px;
+              line-height: 40px;  
+            } 
+            h1:before{
+                height: 5px;
+                width: 425px;
+            }
+        
+            @keyframes startUp {
+                0%{
+                    width: 0px;
+                    opacity: 0;
+                }
+                100%{
+                    width: 425px;
+                }
+            }
+      
+            p{
+                font-size: 30px;
+                line-height: 32px;
+            }
+          }
+        
+    }
+}
