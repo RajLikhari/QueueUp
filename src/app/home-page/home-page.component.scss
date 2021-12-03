@@ -190,7 +190,6 @@
 
 @media only screen and (max-width: 780px) {
     .container{
-        
         .header-container{
             flex-wrap: wrap;
             z-index: 10;
@@ -222,12 +221,7 @@
                 button{
                     font-family: 'Open Sans Condensed', sans-serif;
                     font-size: 40px;
-                    height: 70px;
-                    background-color: #28282B;
-                    color: white;
-                    border-radius: 20px;
-                    z-index: 10;
-                    
+                    height: 70px;                
                 }
             }
         }
@@ -254,16 +248,10 @@
 
         .info-container .info-card:hover .card-face{
             left: 38%;
-            top: 5%;
-            border-radius: 50%;
-            width: 130px;
-            height: 130px;
-            transition-delay: 0.5s;
         }
     
         .info-container .info-card:hover .card-face mat-icon{
            margin-top: 5px;
-           transform: scale(4);
         }
     }
 }
