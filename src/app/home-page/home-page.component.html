@@ -5,6 +5,9 @@
         <mat-slide-toggle (change)="onScale($event)" [checked]='scaleCheck'><mat-icon>accessibility</mat-icon></mat-slide-toggle>
     </div>
     <div class="header-container">
+        <div class="logo-container">
+            <img src="../../assets/Logo.svg" [style.filter]='filter'>
+        </div>
         <div class="text-container" [style.background-color]='color' [style.color]='fontColor' [style.border-color]='borderColor'> 
             <p>Ready to QueueUp?</p>
             <p>Welcome to the best way to search for your new favorite adventures.
@@ -14,11 +17,7 @@
             </p>
             <button mat-raised-button routerLink="/search" [style.background-color]='buttonColor' [style.color]='buttonFontColor'>Search Now</button>
         </div>
-        <div class="logo-container">
-            <img src="../../assets/Logo.svg" [style.filter]='filter'>
-        </div>
     </div>
-    <mat-divider id="line"></mat-divider>
     <div class="info-container">
         <div class="info-card">
             <div class="card-face" [style.background-color]='cardColorOne'>
