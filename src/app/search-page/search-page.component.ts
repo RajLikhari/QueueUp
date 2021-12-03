@@ -51,6 +51,8 @@ export class SearchPageComponent implements OnInit {
       myStorage.setItem('GreyScale', 'true')
       this.scaleCheck = true
       this.filter = 'grayscale(100%)'
+      this.submitButton = '#28282B'
+      this.clearButton = '#28282B'
     } else {
       myStorage.setItem('GreyScale', 'false')
       this.scaleCheck = false

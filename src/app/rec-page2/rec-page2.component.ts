@@ -51,16 +51,38 @@ export class RecPage2Component implements OnInit {
   }
 
   color = '#eaeef0'
+  fontColor = 'black'
+  buttonColor = '#228B22'
   modeCheck = false
   ngOnInit(): void {
     let mode = myStorage.getItem('DarkMode')
+    let scale = myStorage.getItem('GreyScale')
     if(mode == 'true'){
       this.color = '#28282B'
       this.modeCheck = true
+      myStorage.setItem('DarkMode', 'true')
+      this.fontColor = 'white'
 
     } else {
       this.color = '#eaeef0'
+      myStorage.setItem('DarkMode', 'false')
       this.modeCheck = false
+      this.fontColor = 'black'
+
+    }
+
+    if(scale == 'true'){
+      this.scaleCheck = true
+      myStorage.setItem('GreyScale', 'true')
+      this.filter = 'grayscale(100%)'
+      this.buttonColor = '#28282B'
+
+    } else {
+      this.scaleCheck = false
+      myStorage.setItem('GreyScale', 'false')
+      this.filter = "none"
+      this.buttonColor = '#228B22'
+
 
     }
   }
@@ -70,35 +92,35 @@ export class RecPage2Component implements OnInit {
     if(event.checked == true){
       myStorage.setItem('DarkMode', 'true')
       this.color = '#28282B'
+      this.fontColor = 'white'
+
+
 
     } else{
       myStorage.setItem('DarkMode', 'false')
       this.color = '#eaeef0'
+      this.fontColor = 'black'
+
 
     }
   }
 
   scaleCheck = false
-  cardColorOne = '#ADE292'
-  cardColorTwo = '#A1A9FE'
-  cardColorThree = '#A1A9FE'
-  cardColorFour = '#AA1945'
+  filter = "none"
   onScale(event:any){
     if(event.checked == true){
       myStorage.setItem('GreyScale', 'true')
       this.scaleCheck = true
-      this.cardColorOne ='#28282B'
-      this.cardColorTwo = '#28282B'
-      this.cardColorThree = '#28282B'
-      this.cardColorFour = '#28282B'
+      this.filter = 'grayscale(100%)'
+      this.buttonColor = '#28282B'
 
     } else{
       myStorage.setItem('GreyScale', 'false')
       this.scaleCheck = false
-      this.cardColorOne = '#ADE292'
-      this.cardColorTwo = '#A1A9FE'
-      this.cardColorThree = '#A1A9FE'
-      this.cardColorFour = '#AA1945'
+      this.filter = "none"
+      this.buttonColor = '#228B22'
+
+
     }
   }
 }

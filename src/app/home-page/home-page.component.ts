@@ -100,12 +100,13 @@ export class HomePageComponent implements OnInit {
 
     if(scale == 'true'){
       myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
       this.cardColorOne ='#28282B'
       this.cardColorTwo = '#28282B'
       this.cardColorThree = '#28282B'
       this.cardColorFour = '#28282B'
 
-    }{
+    } else {
       myStorage.setItem('GreyScale', 'false')
       this.scaleCheck = false
       this.cardColorOne = '#ADE292'

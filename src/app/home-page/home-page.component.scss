@@ -104,15 +104,10 @@
             display: flex;
             font-family: 'Open Sans Condensed', sans-serif;
             color: white;
-            animation: wakeUp 3s;   
+            animation: wakeUp 1s;   
 
         }
 
-        @keyframes startUp {
-            0%{
-                transform: translateX(-1000px);
-            }
-        }
 
         @keyframes wakeUp{
             0%{

@@ -3,18 +3,24 @@
     <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
     <mat-slide-toggle (change)="onScale($event)" [checked]='scaleCheck'><mat-icon>accessibility</mat-icon></mat-slide-toggle>
 </div>
+<div class="info-container">
+  <h1>Welcome to the Retro Feature!</h1>
+  <p>Find some nostaligic and amazing games based on your birthday! 
+    Simply enter in your birthday in the form below and browse our list of some of the best retro games
+  </p>
+</div>
   <div class="search-container">
     <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
         <mat-form-field appearance="fill">
-            <mat-label>Year Born</mat-label>
+            <mat-label  id='year-input' [style.color]='fontColor'>Year Born</mat-label>
             <input matInput formControlName="year">
         </mat-form-field>
-        <button mat-button class="submit-button" type="submit" id="submit-button">Submit</button>
+        <button mat-button class="submit-button" type="submit" id="submit-button" [style.background-color]='buttonColor'>Submit</button>
     </form>
   </div>
   <div class="videogame-container">
     <div *ngFor="let item of RecommendationArray">
-      <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
+      <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]" [filter]='filter'></app-videogame-card>
     </div>
   </div>
 </div>
