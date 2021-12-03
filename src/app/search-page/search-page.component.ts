@@ -4,7 +4,7 @@ import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/commo
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment.prod';
 const API_URL = environment.apiUrl;
-
+const myStorage = window.localStorage
 
 @Component({
   selector: 'app-search-page',
@@ -22,7 +22,32 @@ export class SearchPageComponent implements OnInit {
     multi: new FormControl(false)
   })
 
+  color = '#eaeef0'
+  modeCheck = false
   ngOnInit(): void {
+    let mode = myStorage.getItem('DarkMode')
+    if(mode == 'true'){
+      this.color = '#28282B'
+      this.modeCheck = true
+
+    } else {
+      this.color = '#eaeef0'
+      this.modeCheck = false
+
+    }
+  }
+
+
+  onToggle(event:any){
+    if(event.checked == true){
+      myStorage.setItem('DarkMode', 'true')
+      this.color = '#28282B'
+
+    } else{
+      myStorage.setItem('DarkMode', 'false')
+      this.color = '#eaeef0'
+
+    }
   }
 
 

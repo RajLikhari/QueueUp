@@ -1,17 +1,20 @@
-<div class="container">
+<div class="container" [style.background-color]='color'>
     <div id="particles-js"></div>
+    <div class="mode-container">
+        <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
+    </div>
     <div class="header-container">
-        <div class="text-container">
+        <div class="text-container" [style.background-color]='color' [style.color]='fontColor' [style.border-color]='borderColor'> 
             <p>Ready to QueueUp?</p>
             <p>Welcome to the best way to search for your new favorite adventures.
                 Find your new favorite games based on your own interests and the newest
                 gaming devices on the market. Use our cultivated recommendations in order 
                 to learn about some of the hottest games on the market today. Learn more below!
             </p>
-            <button mat-raised-button routerLink="/search">Search Now</button>
+            <button mat-raised-button routerLink="/search" [style.background-color]='buttonColor' [style.color]='buttonFontColor'>Search Now</button>
         </div>
         <div class="logo-container">
-            <img src="../../assets/Logo.svg">
+            <img src="../../assets/Logo.svg" [style.filter]='filter'>
         </div>
     </div>
     <mat-divider id="line"></mat-divider>

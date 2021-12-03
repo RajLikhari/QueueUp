@@ -9,6 +9,29 @@
     min-height: 100vh;
     //box-shadow: 5px 5px 10px rgba(0,0,0,0.2), -5px -5px 10px white, inset 5px 5px 10px rgba(0,0,0,0.2), inset -5px -5px 10px white;
 
+    .mode-container{
+        width: 100%;
+        height: 40px;
+        background-color: #28282B;
+        z-index: 1;
+        display: flex;
+        color: white;
+        flex-direction: row;
+        align-items: center;
+        font-family: 'Open Sans Condensed', sans-serif;
+
+
+        mat-slide-toggle{
+            font-family: 'Open Sans Condensed', sans-serif !important;
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        mat-icon{
+            margin-top: 6px;
+       }
+    }
+
     .search-flex{
         display: flex;
         width: 80%;

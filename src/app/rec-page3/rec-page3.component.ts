@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+const myStorage = window.localStorage
 
 @Component({
   selector: 'app-rec-page3',
@@ -23,9 +23,33 @@ export class RecPage3Component implements OnInit {
     game2: new FormControl(null)
   })
 
+  color = '#eaeef0'
+  modeCheck = false
   ngOnInit(): void {
+    let mode = myStorage.getItem('DarkMode')
+    if(mode == 'true'){
+      this.color = '#28282B'
+      this.modeCheck = true
+
+    } else {
+      this.color = '#eaeef0'
+      this.modeCheck = false
+
+    }
   }
 
+
+  onToggle(event:any){
+    if(event.checked == true){
+      myStorage.setItem('DarkMode', 'true')
+      this.color = '#28282B'
+
+    } else{
+      myStorage.setItem('DarkMode', 'false')
+      this.color = '#eaeef0'
+
+    }
+  }
   GameArray: any = []
   processForm2(){
     if(this.formGroup2.value.game1 == null || this.formGroup2.value.game2 == null){

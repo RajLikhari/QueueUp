@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { DialogContent, DialogContentTwo, MenuComponent } from './menu/menu.component';
+import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatButtonModule} from '@angular/material/button';
@@ -30,6 +30,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 
@@ -45,9 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     RecPageComponent,
     VideogameCardComponent,
     RecPage2Component,
-    RecPage3Component,
-    DialogContent,
-    DialogContentTwo
+    RecPage3Component
     
   ],
   imports: [
@@ -72,7 +71,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatAutocompleteModule,
     MatDividerModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [MenuComponent],

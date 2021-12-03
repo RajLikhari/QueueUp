@@ -1,4 +1,7 @@
-<div class="main-container">
+<div class="main-container" [style.background-color]='color'>
+  <div class="mode-container">
+    <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
+  </div>
   <div class="search-container">
     <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()">
         <mat-form-field appearance="fill">
