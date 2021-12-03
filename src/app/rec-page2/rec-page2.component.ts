@@ -77,4 +77,28 @@ export class RecPage2Component implements OnInit {
 
     }
   }
+
+  scaleCheck = false
+  cardColorOne = '#ADE292'
+  cardColorTwo = '#A1A9FE'
+  cardColorThree = '#A1A9FE'
+  cardColorFour = '#AA1945'
+  onScale(event:any){
+    if(event.checked == true){
+      myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
+      this.cardColorOne ='#28282B'
+      this.cardColorTwo = '#28282B'
+      this.cardColorThree = '#28282B'
+      this.cardColorFour = '#28282B'
+
+    } else{
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.cardColorOne = '#ADE292'
+      this.cardColorTwo = '#A1A9FE'
+      this.cardColorThree = '#A1A9FE'
+      this.cardColorFour = '#AA1945'
+    }
+  }
 }

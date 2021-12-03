@@ -23,17 +23,40 @@ export class SearchPageComponent implements OnInit {
   })
 
   color = '#eaeef0'
+  fontColor = "black"
   modeCheck = false
+  submitButton = '#228B22'
+  clearButton = '#D22B2B'
+  public filter = 'none'
   ngOnInit(): void {
     let mode = myStorage.getItem('DarkMode')
+    let scale = myStorage.getItem('GreyScale')
     if(mode == 'true'){
       this.color = '#28282B'
+      myStorage.setItem('DarkMode', 'true')
       this.modeCheck = true
+      this.fontColor = 'white'
+
 
     } else {
       this.color = '#eaeef0'
+      myStorage.setItem('DarkMode', 'false')
       this.modeCheck = false
+      this.fontColor = 'black'
+      this.submitButton = '#28282B'
+      this.clearButton = '#28282B'
 
+    }
+    if(scale == 'true'){
+      myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
+      this.filter = 'grayscale(100%)'
+    } else {
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.submitButton = '#228B22'
+      this.clearButton = '#D22B2B'
+      this.filter = 'none'
     }
   }
 
@@ -42,11 +65,33 @@ export class SearchPageComponent implements OnInit {
     if(event.checked == true){
       myStorage.setItem('DarkMode', 'true')
       this.color = '#28282B'
+      this.fontColor = 'white'
+
 
     } else{
       myStorage.setItem('DarkMode', 'false')
       this.color = '#eaeef0'
+      this.fontColor = 'black'
 
+
+    }
+  }
+
+  scaleCheck = false
+  onScale(event:any){
+    if(event.checked == true){
+      myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
+      this.submitButton = '#28282B'
+      this.clearButton = '#28282B'
+      this.filter = 'grayscale(100%)'
+
+    } else{
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.submitButton = '#228B22'
+      this.clearButton = '#D22B2B'
+      this.filter = 'none'
     }
   }
 

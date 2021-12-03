@@ -28,16 +28,46 @@ export class RecPageComponent implements OnInit {
     }
   }
 
+  filter = 'none'
+  scaleCheck = false
+  onScale(event:any){
+    if(event.checked == true){
+      myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
+      this.filter = 'grayscale(100%)'
+
+    } else{
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.filter = 'none'
+
+
+    }
+  }
+
   ngOnInit(): void {
     let mode = myStorage.getItem('DarkMode')
+    let scale = myStorage.getItem('GreyScale')
     if(mode == 'true'){
       this.color = '#28282B'
       this.modeCheck = true
+      myStorage.setItem('DarkMode', 'true')
 
     } else {
       this.color = '#eaeef0'
       this.modeCheck = false
+      myStorage.setItem('DarkMode', 'false')
+    }
 
+    if(scale == 'true'){
+      this.scaleCheck = true
+      myStorage.setItem('GreyScale', 'true')
+      this.filter = 'grayscale(100%)'
+
+    } else {
+      this.scaleCheck = false
+      myStorage.setItem('GreyScale', 'false')
+      this.filter = 'none'
     }
 
     const bodyToSend = {}

@@ -1,13 +1,20 @@
 <div class="main-flex" [style.background-color]='color'>
     <div class="mode-container">
         <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
+        <mat-slide-toggle (change)="onScale($event)" [checked]='scaleCheck'><mat-icon>accessibility</mat-icon></mat-slide-toggle>
+    </div>
+    <div class="info-container">
+        <h1>Welcome to the Search Feature!</h1>
+        <p>Search for your new favorite games using either the genre, platform, or multiplayer compatability! 
+            Our refined application only provides the best games and you can even use our filtered tweets to see what people think about the game!
+        </p>
     </div>
     <div class="search-flex">
         <form [formGroup]='formGroup' class='form-container' (ngSubmit)="processForm()" >
-            <button mat-button class="clear-button" type="reset" id="reset-button">Clear</button>
+            <button mat-button class="clear-button" type="reset" id="reset-button" [style.background-color]='clearButton'>Clear</button>
             <mat-form-field appearance="fill" id="genre-select">
-                <mat-label for='genre' id="genre-label">Genre</mat-label>
-                <mat-select placeholder="Genre" formControlName="genre">
+                <mat-label for='genre' id="genre-label" [style.color]='fontColor'>Genre</mat-label>
+                <mat-select placeholder="Genre" formControlName="genre" >
                     <mat-option>None</mat-option>
                     <mat-option value="Shooter">Shooter</mat-option>
                     <mat-option value="Racing">Racing</mat-option>
@@ -28,7 +35,7 @@
             </mat-form-field>
             <!--Form group for platform-->
             <mat-form-field appearance="fill" id="platform-select">
-                <mat-label for='platform' id="platform-label">Platform</mat-label>
+                <mat-label for='platform' id="platform-label" [style.color]='fontColor'>Platform</mat-label>
                 <mat-select placeholder="platform" formControlName="platform">
                    <mat-option value="PC~4">PC (Windows)</mat-option>
                    <mat-option value="PlayStation 5~187">PlayStation 5</mat-option>
@@ -43,16 +50,16 @@
                 </mat-select>
             </mat-form-field>
             <!--Form group for multiplayer-->
-            <mat-checkbox  id="multi-label" formControlName="multi">Multiplayer</mat-checkbox>
-            <button mat-button class="submit-button" type="submit" id="submit-button">Search</button>
+            <mat-checkbox  id="multi-label" formControlName="multi" [style.color]='fontColor'>Multiplayer</mat-checkbox>
+            <button mat-button class="submit-button" type="submit" id="submit-button" [style.background-color]='submitButton'>Search</button>
         </form>
     </div>
     <div class="card-flex">
         <div *ngFor="let game of RAWGData">
-            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
+            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]" [filter]='filter'></app-videogame-card>
         </div>
         <div *ngFor="let game of IGDBData">
-            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]"></app-videogame-card>
+            <app-videogame-card [gameName]="game[0]" [gameCoverArt]="game[1]" [filter]='filter'></app-videogame-card>
         </div>
     </div>
 </div>

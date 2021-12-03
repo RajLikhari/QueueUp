@@ -44,11 +44,36 @@ export class HomePageComponent implements OnInit {
     }
   }
 
+  scaleCheck = false
+  cardColorOne = '#ADE292'
+  cardColorTwo = '#A1A9FE'
+  cardColorThree = '#A1A9FE'
+  cardColorFour = '#AA1945'
+  onScale(event:any){
+    if(event.checked == true){
+      myStorage.setItem('GreyScale', 'true')
+      this.scaleCheck = true
+      this.cardColorOne ='#28282B'
+      this.cardColorTwo = '#28282B'
+      this.cardColorThree = '#28282B'
+      this.cardColorFour = '#28282B'
+
+    } else{
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.cardColorOne = '#ADE292'
+      this.cardColorTwo = '#A1A9FE'
+      this.cardColorThree = '#A1A9FE'
+      this.cardColorFour = '#AA1945'
+    }
+  }
+
   
   modeCheck = false
   ngOnInit(): void {
     particlesJS.load('particles-js', '../../assets/particles.json', null);
     let mode = myStorage.getItem('DarkMode')
+    let scale = myStorage.getItem('GreyScale')
     if(mode == 'true'){
       this.color = '#28282B'
       particlesJS.load('particles-js', '../../assets/particles2.json', null);
@@ -70,6 +95,23 @@ export class HomePageComponent implements OnInit {
       this.filter = 'none'
       myStorage.setItem('DarkMode', 'false')
       this.modeCheck = false
+
+    }
+
+    if(scale == 'true'){
+      myStorage.setItem('GreyScale', 'true')
+      this.cardColorOne ='#28282B'
+      this.cardColorTwo = '#28282B'
+      this.cardColorThree = '#28282B'
+      this.cardColorFour = '#28282B'
+
+    }{
+      myStorage.setItem('GreyScale', 'false')
+      this.scaleCheck = false
+      this.cardColorOne = '#ADE292'
+      this.cardColorTwo = '#A1A9FE'
+      this.cardColorThree = '#A1A9FE'
+      this.cardColorFour = '#AA1945'
 
     }
 

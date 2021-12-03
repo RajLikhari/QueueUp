@@ -1,10 +1,17 @@
 <div class="main-container" [style.background-color]='color'>
-    <div class="mode-container">
-      <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
-    </div>
-    <div class="videogame-container">
-      <div *ngFor="let item of RecommendationArray">
-        <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]"></app-videogame-card>
-      </div>
+  <div class="mode-container">
+    <mat-slide-toggle (change)="onToggle($event)" [checked]='modeCheck'><mat-icon>brightness_high</mat-icon></mat-slide-toggle>
+    <mat-slide-toggle (change)="onScale($event)" [checked]='scaleCheck'><mat-icon>accessibility</mat-icon></mat-slide-toggle>
+  </div>
+  <div class="info-container">
+    <h1>Welcome to the Popular Feature!</h1>
+    <p>Find the hottest games on the market right now according to the popular streaming website, Twitch.TV!
+        Find some new streamers to watch based on their tweets and see what people are saying about the game as well.
+    </p>
+  </div>
+  <div class="videogame-container">
+    <div *ngFor="let item of RecommendationArray">
+      <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]" [filter]='filter'></app-videogame-card>
     </div>
   </div>
+</div>
