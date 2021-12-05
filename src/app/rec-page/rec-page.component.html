@@ -10,7 +10,6 @@
     </p>
   </div>
   <div class="videogame-container">
-    <app-videogame-card gameName='hello' gameCoverArt='../assets/test.jpg'></app-videogame-card>
     <div *ngFor="let item of RecommendationArray">
       <app-videogame-card [gameName]="item[0]" [gameCoverArt]="item[1]" [filter]='filter'></app-videogame-card>
     </div>
