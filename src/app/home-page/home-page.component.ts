@@ -71,7 +71,6 @@ export class HomePageComponent implements OnInit {
   
   modeCheck = false
   ngOnInit(): void {
-    particlesJS.load('particles-js', '../../assets/particles.json', null);
     let mode = myStorage.getItem('DarkMode')
     let scale = myStorage.getItem('GreyScale')
     if(mode == 'true'){
