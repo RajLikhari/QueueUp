@@ -54,8 +54,8 @@
         justify-content: space-around;
         align-items: center;
         text-align: center;
-        z-index: 0;
-
+        z-index: -2;
+        
         .text-container{
             margin-top: 20px;
             margin-bottom: 20px;
@@ -68,7 +68,7 @@
             align-items: center;
             background-color: #eaeef0;
             border-radius: 50px;
-
+    
 
             p:first-of-type{
                 font-size: 80px;
@@ -89,7 +89,6 @@
                 background-color: #28282B;
                 color: white;
                 border-radius: 20px;
-                
             }
         }
     
