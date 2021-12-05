@@ -25,11 +25,12 @@
         justify-content: center;
         align-items: center;
         margin-top: 20px;
+        overflow: hidden;
     }
 
     .image-flex img{
         width: auto;
-        height: 70%;
+        height: auto;
         box-shadow: 2px 2px 5px black;
         overflow: hidden;
 
